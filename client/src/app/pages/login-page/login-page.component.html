@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" class="form-signin text-center">
+  <img class="mb-4" src="https://img.icons8.com/pastel-glyph/420/attestation.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-light">Atestados <b class="font-weight-bold">Online</b></h1>
+  
+  <label for="inputEmail" class="sr-only">E-mail</label>
+  <input type="email" id="inputEmail" name="user.email" [(ngModel)]="user.email" class="form-control" 
+  placeholder="E-mail" required="" autofocus="">
+  
+  <label for="inputPassword" class="sr-only">Senha</label>
+  <input type="password" id="inputPassword" name="user.password" [(ngModel)]="user.password" class="form-control" 
+  placeholder="Senha" required="">
+
+  <button class="btn btn-lg btn-dark btn-block" type="submit">Entrar</button>
+  <p class="mt-5 mb-3 text-muted">© Open Source - {{ currentDate.getFullYear() }}</p>
+</form>

@@ -1,0 +1,87 @@
+<h3>
+  <b>{{ title }}</b> Atestado
+</h3>
+<hr>
+<form #sickForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-4">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="doctorSelected">Médico *</label>
+            <ng-select #doctor="ngModel" required [items]="doctors"
+            placeholder="Selecione o médico"
+            bindLabel="name"
+            [(ngModel)]="doctorSelected" name="doctorSelected">
+            </ng-select>
+            <div [hidden]="doctor.valid" class="text-danger">
+              <small>Campo obrigatório</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+          <label for="inpatientSelected">Paciente *</label>
+          <ng-select #inpatient="ngModel" required [items]="inpatients"
+          placeholder="Selecione o paciente"
+          bindLabel="name"
+          [(ngModel)]="inpatientSelected" name="inpatientSelected">
+          </ng-select>
+          <div [hidden]="inpatient.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+          <label for="inpatientSelected">Hora Início Atendimento *</label>
+          <input #start_time="ngModel" required [(ngModel)]="sickNote.start_time" name="sickNote.start_time" type="text" [dropSpecialCharacters]="false" mask='00:00' class="form-control">
+          <div [hidden]="start_time.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+          <label for="inpatientSelected">Hora Final Atendimento *</label>
+          <input #end_time="ngModel" required [(ngModel)]="sickNote.end_time" name="sickNote.end_time" type="text" [dropSpecialCharacters]="false" mask='00:00' class="form-control">
+          <div [hidden]="end_time.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+          <label for="inpatientSelected">Dias de Descanso *</label>
+          <input #days_rest="ngModel" required maxlength="3" size="3" [(ngModel)]="sickNote.days_rest" name="sickNote.days_rest" type="number" class="form-control">
+          <div [hidden]="days_rest.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+          <label for="inpatientSelected">CID</label>
+          <input [(ngModel)]="sickNote.cid" maxlength="7" name="sickNote.cid" type="text" class="form-control">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+          <label for="inpatientSelected">Data Atestado *</label>
+          <input required #date="ngModel" [(ngModel)]="sickNote.date" name="sickNote.date" type="text" mask='00/00/0000' [dropSpecialCharacters]="false" class="form-control">
+          <div [hidden]="date.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="form-group">
+          <label for="inpatientSelected">Detalhes</label>
+          <textarea maxlength="500" [(ngModel)]="sickNote.details" name="sickNote.details" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <button [disabled]="!sickForm.form.valid" type="submit" class="btn btn-danger btn-lg"><span class="fa fa-save"></span> Salvar</button>
+    <a href="javascript:void(0)" routerLink="/admin/atestados" class="btn btn-outline-secondary btn-lg ml-2"><span class="fas fa-arrow-left"></span> Voltar</a>
+  </div>
+</form>

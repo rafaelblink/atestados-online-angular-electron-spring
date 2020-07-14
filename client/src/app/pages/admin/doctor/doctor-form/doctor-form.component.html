@@ -1,0 +1,33 @@
+<h3>
+  <b>{{ title }}</b> Médico
+</h3>
+<hr>
+<form #formDoctor="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-4">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nome *</label>
+            <input required #name="ngModel" maxlength="100" type="text" class="form-control" id="exampleInputEmail1"
+            placeholder="Nome Completo" name="doctor.name" [(ngModel)]="doctor.name">
+            <div [hidden]="name.valid" class="text-danger">
+              <small>Campo obrigatório</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+          <label for="exampleInputEmail1">CRM *</label>
+          <input maxlength="13" required #crm="ngModel" type="email" class="form-control" id="exampleInputEmail1"
+          placeholder="CRM Completo" [(ngModel)]="doctor.crm" name="doctor.crm">
+          <div [hidden]="crm.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <button [disabled]="!formDoctor.form.valid" type="submit" class="btn btn-danger btn-lg"><i class="fa fa-save"></i> Salvar</button>
+    <a href="javascript:void(0)" routerLink="/admin/medicos" class="btn btn-outline-secondary btn-lg ml-2"><i class="fas fa-arrow-left"></i> Voltar</a>
+  </div>
+</form>

@@ -1,0 +1,33 @@
+<h3>
+  <b>{{ title }}</b> Paciente
+</h3>
+<hr>
+<form #inpatientForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-4">
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Nome *</label>
+            <input required #name="ngModel" maxlength="100" type="email" class="form-control" id="exampleInputEmail1"
+            placeholder="Nome Completo" name="inpatient.name" [(ngModel)]="inpatient.name">
+            <div [hidden]="name.valid" class="text-danger">
+              <small>Campo obrigatório</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="form-group">
+          <label for="exampleInputEmail1">RG *</label>
+          <input required #rg="ngModel" maxlength="7" type="email" class="form-control" id="exampleInputEmail1"
+          placeholder="RG" [(ngModel)]="inpatient.rg" name="inpatient.rg">
+          <div [hidden]="rg.valid" class="text-danger">
+            <small>Campo obrigatório</small>
+          </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <button type="submit" [disabled]="!inpatientForm.form.valid"  class="btn btn-danger btn-lg"><span class="fa fa-save"></span> Salvar</button>
+    <a routerLink="/admin/pacientes" class="btn btn-outline-secondary btn-lg ml-2"><span class="fas fa-arrow-left"></span> Voltar</a>
+  </div>
+</form>

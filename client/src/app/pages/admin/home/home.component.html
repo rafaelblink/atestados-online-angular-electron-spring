@@ -1,0 +1,48 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4"><i class="fas fa-door-open text-secondary"></i> Seja <b style="font-weight:bold">bem vindo!</b></h1>
+    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam aspernatur, qui consectetur a saepe animi fuga iure magnam voluptates perferendis.</p>
+</div>
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal">Médicos</h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title">{{ doctors?.length }} <small class="text-muted">médicos</small></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li>Informe todos os dados</li>
+            <li>Cadastros ilimitados</li>
+          </ul>
+          <a routerLink="/admin/medicos/cadastrar" class="btn btn-lg btn-block btn-dark"><i class="fas fa-plus-circle"></i> Cadastrar</a>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">Pacientes</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ inpatients?.length }} <small class="text-muted">pacientes</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Informe todos os dados</li>
+              <li>Cadastros ilimitados</li>
+            </ul>
+            <a routerLink="/admin/pacientes/cadastrar" class="btn btn-lg btn-block btn-dark"><i class="fas fa-plus-circle"></i> Cadastrar</a>
+          </div>
+        </div>
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal">Atestados Médicos</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">{{ sickNotes?.length }} <small class="text-muted">atestados</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Informe todos os dados</li>
+                <li>Cadastros ilimitados</li>
+              </ul>
+              <a routerLink="/admin/atestados/cadastrar" class="btn btn-lg btn-block btn-dark"><i class="fas fa-file-signature"></i> Gerar</a>
+            </div>
+          </div>
+    </div>
+  </div>

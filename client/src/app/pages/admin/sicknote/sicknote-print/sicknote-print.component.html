@@ -1,0 +1,30 @@
+<h1 style="margin-top: 150px;" class="display-4 text-center">
+    <img class="mb-4" src="https://img.icons8.com/pastel-glyph/420/attestation.png" alt="" width="72" height="72"> Atestado Médico
+</h1>
+
+<div class="wrapper-print">
+  <section class="mt-5 text-right">
+    <p>Atesto para devidos fins, que o(a)</p>
+  </section>
+  <section>
+    <p>
+      Sr(a) <b>{{ sickNote?.inpatient?.name }}</b>, portador do RG: <b>{{sickNote?.inpatient?.rg}}</b>
+    </p>
+    <p>
+      Esteve sob meus cuidados profissionais no período das <b>{{ sickNote?.start_time}}</b> às
+      <b>{{ sickNote?.end_time}}</b> horas no dia <b>{{ sickNote?.date}}</b>. Necessitando o(a) mesmo de <b>{{ sickNote?.days_rest}}</b>
+      de convalescença. CID <b>{{ sickNote?.cid}}</b>
+    </p>
+  </section>
+  <section class="mt-5">
+    <p>Indicações:</p> <b>{{ sickNote?.details }}</b>
+  </section>
+  <section class="mt-5">
+    <p>João Pessoa/PB - {{ dateNow | date: 'dd/MM/yyyy' }}</p>
+  </section>
+  <section style="margin-top:150px" class="text-center signature-doctor">
+    <p>________________________________________________________</p>
+    <p class="h3">{{ sickNote?.doctor.name }}</p>
+    <p class="h4">CRM: {{ sickNote?.doctor?.crm }}</p>
+  </section>
+</div>
