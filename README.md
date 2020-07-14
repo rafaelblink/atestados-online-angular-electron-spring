@@ -1,6 +1,5 @@
 # HOW TO RUN THE PROJECT #
 
 
-1. Import the 'api' project on ur eclipse as a maven project, install de dependencies and run.
-
-2. open 'client' on ur terminal, run 'npm run start' and that's it :)
+1. Import 'api' project in your eclipse as a maven project, install the dependencies and run.
+2. open 'client' in your terminal, run 'ng serve' and that's it :)
